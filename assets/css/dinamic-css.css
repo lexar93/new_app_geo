@@ -1,0 +1,87 @@
+/* Links */
+a {
+  color: #145b5d; }
+
+.fontblue {
+  color: #145b5d; }
+
+/* Butons */
+.button-primary {
+  background-color: #145b5d;
+  border-color: #145b5d; }
+
+.button-reverse {
+  border-color: #145b5d;
+  background-color: transparent; }
+
+.button-primary:hover,
+.button-reverse:hover {
+  background-color: #267781;
+  border-color: #267781; }
+
+.button-primary:active,
+.button-reverse:active {
+  background-color: #0D6665;
+  border-color: #0D6665; }
+
+/* Inputs */
+.normal-checkbox:checked + span {
+  background-color: #145b5d;
+  border-color: #145b5d; }
+
+.custom-radio:checked + span {
+  border-color: #145b5d; }
+  .custom-radio:checked + span:before {
+    background: #145b5d; }
+
+.map-radio:checked + span {
+  border-color: #145b5d; }
+
+.irs-bar {
+  background: #145b5d; }
+
+.irs-slider {
+  background: #145b5d; }
+
+/* Navigation */
+.menu-principal a,
+.menu-vertical a {
+  color: #145b5d; }
+
+#burger-menu span {
+  background: #145b5d; }
+
+/* Boxes */
+.box-cnae .box-table td:nth-of-type(odd) {
+  color: #145b5d; }
+
+/* Tables */
+.search-page .rwd-table tbody tr:nth-of-type(even) {
+  background-color: #F3F7F9; }
+
+.contacto .inner-hero {
+  position: relative; }
+  .contacto .inner-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: -webkit-gradient(linear, left top, right top, from(#145b5d), to(#063b1d));
+    background: -webkit-linear-gradient(left, #145b5d, #063b1d);
+    background: -o-linear-gradient(left, #145b5d, #063b1d);
+    background: linear-gradient(to right, #145b5d, #063b1d);
+    opacity: 0.8;
+    z-index: 0; }
+
+/* Qui som */
+.quisom-box {
+  background-color: #D7E2E8; }
+
+/* Footer */
+footer {
+  background-color: #145b5d; }
+
+.menu-footer {
+  background-color: #063b1d; }
