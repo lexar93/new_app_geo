@@ -1,0 +1,52 @@
+//Fonts
+
+$Montserrat: 'Montserrat', Arial, Helvetica, sans-serif;
+$OpenSans: 'Open Sans', Arial, Helvetica, sans-serif;
+
+$default-browser-font-size: 16px !global;
+
+//Colors
+$white: #FFFFFF;
+$black:#000;
+$light-grey: #D7E2E8;
+$pale-grey: #ABB6BC;
+$grey: #9b9b9b;
+$dark-grey: #606060;
+$bold-grey: #4a4a4a;
+
+$body-grey: $pale-grey;
+$headers-grey: $bold-grey;
+$p-grey: #697277;
+$regular-checkbox: #DFDFDF;
+$selects-grey: #CBCBCB;
+$selects-bg-grey: #F8F8F8;
+$range-line-grey: #E5E5E5;
+$popup-border-grey: $selects-bg-grey; 
+$box-header-grey: #565F64;
+$lines-grey: $light-grey;
+
+$select-color: $bold-grey;
+
+//Sizes
+$select-width: 220px;
+$select-height: 40px; 
+
+$breakpoints: (
+  xsmall: 0px,
+  small: 320px,
+  medium: 768px,
+  large: 1024px,
+  xlarge: 1450px
+);
+
+$menu-break: 990px;
+$menu-break-mobile: $menu-break - 1px;
+$wrapper-size-small-1: 770px; // About Us
+$wrapper-size-1: 1220px;
+$detall-break-1: 768px;
+$detall-break-2: 1100px;
+
+
+//Paths
+$img-path: '../img/';
+

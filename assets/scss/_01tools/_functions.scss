@@ -1,0 +1,54 @@
+
+
+//
+// * FUNCTIONS
+// * em Calculator
+// * rem Calculator
+// * Set color font
+// * img route
+// * submap
+//
+
+
+
+
+// EM CALCULATOR 
+@function em-calculator($size, $context: $default-browser-font-size) {
+@return $size / $context * 1em;
+}
+
+@function em($size, $context: $default-browser-font-size) {
+@return em-calculator($size, $context);
+}
+
+// REM CALCULATOR
+
+@function rem-calculator($size) {
+@return $size / $default-browser-font-size * 1rem;
+}
+
+@function rem($size) {
+@return rem-calculator($size);
+}
+
+
+// SET FONT COLOR
+
+@function set-font-color($background-color, $default-font-color) {
+$font-color: $default-font-color;
+@if lightness($background-color) > 50% {
+$font-color: invert($default-font-color);
+} @return $font-color;
+}
+
+// IMG URL
+@function img-url($img){
+  @return $img-path + $img;
+}
+
+// SUBMAP
+@function submap($map, $key, $subkey){
+	$submap: map-get($map, $key);
+	$value: map-get($submap, $subkey);
+	@return $value;
+}

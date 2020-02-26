@@ -1,0 +1,112 @@
+
+@import '_01tools/_mixins.scss';
+
+$primary-color:  #145b5d;
+$primary-hover-color:  #267781; //Primary Button Hover
+$primary-active-color:  #0D6665; //Primary Button Active
+$quisom-box-color: #D7E2E8;
+$tables-bg-color: #F3F7F9; //Tables Background
+$footer-color: #063b1d;  //Menu Footer Color
+
+/* Links */
+
+a{
+    color: $primary-color;
+}
+
+.fontblue{
+    color: $primary-color;
+}
+
+/* Butons */
+.button-primary{
+    background-color: $primary-color;
+    border-color: $primary-color;
+}
+
+.button-reverse{
+    border-color: $primary-color;
+    background-color: transparent;
+}
+
+.button-primary:hover,
+.button-reverse:hover{
+    background-color: $primary-hover-color;
+    border-color: $primary-hover-color;
+}
+
+.button-primary:active,
+.button-reverse:active{
+    background-color: $primary-active-color;
+    border-color: $primary-active-color;
+}
+
+/* Inputs */
+
+.normal-checkbox:checked + span{
+    background-color: $primary-color;
+    border-color: $primary-color;
+}
+
+.custom-radio:checked + span{
+    border-color: $primary-color;
+    
+    &:before{
+        background: $primary-color;
+    }
+}
+
+.map-radio:checked + span{
+    border-color: $primary-color;
+}
+
+.irs-bar{
+    background: $primary-color;
+}
+
+.irs-slider{
+    background: $primary-color;
+}
+
+
+/* Navigation */
+.menu-principal a,
+.menu-vertical a {
+    color: $primary-color;
+}
+
+#burger-menu span{
+    background: $primary-color;
+}
+
+/* Boxes */
+.box-cnae .box-table td:nth-of-type(odd){
+    color: $primary-color;
+}
+
+/* Tables */
+
+.search-page .rwd-table tbody tr:nth-of-type(even){
+    background-color: $tables-bg-color;
+}
+
+
+.contacto .inner-hero{
+    @include gradient-over-image('right', $primary-color, $footer-color, 0.8);
+}
+
+/* Qui som */
+
+.quisom-box{
+    background-color: $quisom-box-color;
+}
+
+/* Footer */
+
+footer{
+    background-color: $primary-color;
+}
+
+.menu-footer{
+    background-color: $footer-color; 
+}

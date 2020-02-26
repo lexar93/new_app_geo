@@ -1,0 +1,163 @@
+//
+// * MIXINS
+// * Clearfix
+// * Opacity
+// * Add Border
+// * Wrapper
+// * Inline Block
+// * Font-Size
+// * Text-format
+// * Breakpoints
+// * Grid
+// * Video Responsive
+// * Gradient Over Image
+//
+
+@mixin clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Opacity
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+//Add Border
+
+@mixin add-border($size, $color, $position, $type: solid){
+  @if $position == 'all'{
+    border:$size $type $color;
+  } @else if $position == 'top'{
+    border-top:$size $type $color;
+  } @else if $position == 'bottom'{
+    border-bottom:$size $type $color;
+  } @else if $position == 'right'{
+    border-right:$size $type $color;
+  } @else if $position == 'left'{
+    border-left:$size $type $color;
+  } @else if $position == 'top-bottom'{
+    border-top:$size $type $color;
+    border-bottom:$size $type $color;
+  } @else if $position == 'right-left'{
+    border-left:$size $type $color;
+    border-right:$size $type $color;
+  }
+}
+
+// Wrapper
+
+@mixin wrapper($size){
+  margin: 0 auto;
+  width: $size;
+}
+
+//Inline Block
+
+@mixin inline-block($align: top){
+  display: inline-block;
+  vertical-align: $align;
+}
+
+//Calc Rem
+
+@function rem-calc($size) {
+  $remSize: $size / $default-browser-font-size;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: rem-calc($size);
+}
+
+// Text-Format
+
+@mixin text-format($size, $family, $color) {
+    font: {
+     size: rem-calc($size);
+     family: $family;
+    };
+    color: $color;
+}
+
+
+// Breakpoints
+
+@mixin breakpoints($bp, $mb-1st: yes) {
+  $type: type-of($bp);
+  @if map-has-key($breakpoints,$bp){
+    @if($mb-1st == yes){
+      @media only screen and (min-width:map-get($breakpoints,$bp)) {
+        @content;
+      }  
+    }@else{
+      @media only screen and (max-width:map-get($breakpoints,$bp)) {
+        @content;
+      }  
+    }
+  
+  }@elseif $type != number{
+    @error "#{$bp} no es un valor valido";
+  }@else{
+    @if($mb-1st == yes){
+      @media only screen and (min-width:$bp) {
+        @content;
+      }
+    }@else{
+      @media only screen and (max-width:$bp) {
+        @content;
+      }
+    }   
+  }
+}
+
+
+// @include breakpoints($size){...}
+
+
+//Grid
+
+@mixin grid-row{
+  @include clearfix;
+}
+
+@mixin grid-column($column-size){
+    float: left;
+    width: percentage($column-size/12);
+}
+
+
+//Video responsive
+
+@mixin video-rwd($w,$h){
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  padding-bottom: percentage($h/$w);
+}
+
+@mixin gradient-over-image($direction, $color1, $color2, $opacity){
+    position: relative;
+
+    &::before{
+      content: "";
+      position: absolute;
+      top:0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to unquote($direction), $color1, $color2);
+      opacity: $opacity;
+      z-index: 0;
+  }
+}
